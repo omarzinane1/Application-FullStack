@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import api from '../api/axios';
 
 export default function TicketForm({ ticket, onSaved }) {
-  const [title, setTitle] = useState(ticket ? ticket.title : '');
   const [description, setDescription] = useState(ticket ? ticket.description : '');
   const [callId, setCallId] = useState(ticket ? ticket.call_id : '');
   const [calls, setCalls] = useState([]);
@@ -26,7 +25,7 @@ export default function TicketForm({ ticket, onSaved }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = { title, description, call_id: callId };
+    const payload = { description, call_id: callId };
     try {
       if (ticket) {
         await api.put(`/tickets/${ticket.id}`, payload);

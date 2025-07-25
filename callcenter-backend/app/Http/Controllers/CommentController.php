@@ -14,14 +14,13 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ticket_id' => 'required|exists:tickets,id',
-            'message'   => 'required|string',
+            'content'   => 'required|string',
         ]);
 
         $comment = Comment::create([
             'ticket_id' => $request->ticket_id,
             'user_id'   => auth()->id(),
-            'message'   => $request->message,
+            'content'   => $request->message,
         ]);
 
         return response()->json([
