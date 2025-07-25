@@ -45,16 +45,23 @@ cd Application-FullStack
 ### 2. Lancer le backend Laravel
 
 cd backend
+
 composer install
+
 cp .env.example .env
+
 php artisan key:generate
+
 php artisan migrate
+
 php artisan serve
 
 ### 3. Lancer le frontend React
 
 cd frontend
+
 npm install
+
 npm run dev
 
 🔗 Accès
