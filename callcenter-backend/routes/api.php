@@ -39,8 +39,8 @@ Route::middleware(['auth:api'])->group(function () {
     // Appels (superviseurs peuvent voir tout)
     Route::middleware('superviseur')->group(function () {
         Route::get('/calls', [CallController::class, 'index']);
-        Route::delete('/users/{id}', [Controller::class, 'destroy']);
-        Route::get('/users', [Controller::class, 'allUser']);
+        Route::delete('/users/{id}', [AuthController::class, 'destroy']);
+        Route::get('/users', [AuthController::class, 'allUser']);
     });
 
     // Tickets
@@ -52,7 +52,6 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::get('/tickets', [TicketController::class, 'index']);
     Route::get('/calls', [CallController::class, 'index']);
-    Route::get('/users', [Controller::class, 'allUser']);
 
     // Commentaires
     Route::post('/tickets/{id}/comments', [CommentController::class, 'store']);

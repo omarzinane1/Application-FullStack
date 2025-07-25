@@ -139,7 +139,7 @@ export default function DashboardSupervisor() {
         </button>
 
         {showCreateAgentForm && (
-          <form onSubmit={handleCreateAgent} style={{ marginTop: '1em' }}>
+          <form className="fromAgent" onSubmit={handleCreateAgent} style={{ marginTop: '1em' }}>
             <input
               type="text"
               placeholder="Nom complet"
@@ -165,12 +165,15 @@ export default function DashboardSupervisor() {
           </form>
         )}
 
-        <ul style={{ marginTop: '1em' }}>
+        <ul className="agents-list">
           {agents.map(agent => (
-            <li key={agent.id} style={{ marginBottom: '0.5em' }}>
-              {agent.name} ({agent.email})
+            <li key={agent.id}>
+              <div className="agent-info">
+                <strong>{agent.name}</strong> <br />
+                <span>{agent.email}</span>
+              </div>
               <button
-                style={{ marginLeft: '1em', color: 'red' }}
+                className="agent-delete-button"
                 onClick={() => handleDeleteAgent(agent.id)}
               >
                 Supprimer
@@ -178,6 +181,8 @@ export default function DashboardSupervisor() {
             </li>
           ))}
         </ul>
+
+
       </section>
     </div>
   );

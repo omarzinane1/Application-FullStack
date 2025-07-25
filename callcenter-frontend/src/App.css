@@ -289,14 +289,14 @@
 }
 
 /* Formulaire création agent */
-form {
+.fromAgent {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
   max-width: 300px;
 }
 
-form input {
+.fromAgent input {
   padding: 8px 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -304,7 +304,7 @@ form input {
   font-size: 1rem;
 }
 
-form button[type="submit"] {
+.fromAgent button[type="submit"] {
   padding: 10px;
   background-color: #007bff;
   border: none;
@@ -315,35 +315,56 @@ form button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-form button[type="submit"]:hover {
+.fromAgent button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
 /* Liste agents */
-section ul {
+.agents-list {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  margin-top: 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
 }
 
-section ul li {
-  margin-bottom: 0.5em;
+.agents-list li {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+  color: #333;
 }
 
-section ul li button {
-  background: none;
+.agents-list li:last-child {
+  border-bottom: none;
+}
+
+.agent-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.agent-delete-button {
+  margin-left: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
   border: none;
-  color: red;
+  border-radius: 5px;
+  background-color: #cc0000;
+  color: white;
   cursor: pointer;
-  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-section ul li button:hover {
-  text-decoration: underline;
+.agent-delete-button:hover {
+  background-color: #990000;
 }
-
 
 
 /* callform */
