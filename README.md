@@ -58,7 +58,7 @@ php artisan serve
 
 ### 3. Lancer le frontend React
 
-cd frontend
+cd callcenter-frontend
 
 npm install
 
