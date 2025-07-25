@@ -39,6 +39,7 @@ Ce projet est une application web Full-Stack permettant la gestion d'appels et d
 
 
 git clone https://github.com/omarzinane1/Application-FullStack.git
+
 cd Application-FullStack
 
 ### 2. Lancer le backend Laravel
